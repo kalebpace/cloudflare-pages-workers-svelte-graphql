@@ -1,0 +1,10 @@
+name = "api"
+type = "javascript"
+account_id = "ba6c25249cb99a0248f0022ec28ac07b"
+workers_dev = true
+
+[build]
+command = "webpack || npm run build"
+
+[build.upload]
+format = "service-worker"

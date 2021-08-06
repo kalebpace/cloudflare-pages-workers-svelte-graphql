@@ -1,0 +1,21 @@
+{
+  "name": "cloudflare-pages-workers-vue3-graphql",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "api",
+      "app"
+    ]
+  },
+  "scripts": {
+    "api": "npm run serve -w api",
+    "app": "npm run serve -w app",
+    "serve": "concurrently --kill-others-on-fail \"npm run app\" \"npm run api\"",
+    "test:unit": "npm run test:unit --workspace=api --workspace=app",
+    "test:watch": "npm run test:watch --workspace=api --workspace=app"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "concurrently": "^6.0.2"
+  }
+}
