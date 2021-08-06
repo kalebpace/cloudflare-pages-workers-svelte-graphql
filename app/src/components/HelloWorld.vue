@@ -149,7 +149,8 @@ export default class HelloWorld extends Vue {
   workersMsg = "";
 
   created(): void {
-    fetch("http://localhost:8787")
+    const endpoint = process.env.VUE_APP_API_ENDPOINT;
+    fetch(endpoint)
       .then((resp) => resp.json())
       .then((data) => (this.workersMsg = data.msg));
   }
