@@ -8,3 +8,6 @@ command = "webpack || npm run build"
 
 [build.upload]
 format = "service-worker"
+
+[env.production]
+workers_dev = true
