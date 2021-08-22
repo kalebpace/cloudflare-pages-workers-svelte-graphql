@@ -7,7 +7,8 @@
 	"postAttachCommand": "npm install && cd ./api && npm install && cd ..",
 	"extensions": [
 		"dbaeumer.vscode-eslint",
-		"johnsoncodehk.volar"
+		"johnsoncodehk.volar",
+		"eamodio.gitlens"
 	],
 	"remoteUser": "node"
 }
