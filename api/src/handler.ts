@@ -5,10 +5,7 @@ const corsHeaders = {
 }
 
 async function handleRequest(request: Request): Promise<Response> {
-  const headers = new Headers({
-      ...corsHeaders,
-      "Access-Control-Allow-Headers": "*",
-    })
+  const headers = new Headers(corsHeaders)
   const response = new Response(JSON.stringify({msg:`Hello from Workers, [${request.url}]!`}), {
     headers: headers
   })
