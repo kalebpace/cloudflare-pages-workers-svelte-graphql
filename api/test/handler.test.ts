@@ -1,7 +1,7 @@
-import { handleRequest } from '../src/handler'
+import { handleRequest } from '../src/handlers/handler'
 import makeServiceWorkerEnv from 'service-worker-mock'
 
-declare var global: any
+declare const global: any
 
 describe('handle', () => {
   beforeEach(() => {
