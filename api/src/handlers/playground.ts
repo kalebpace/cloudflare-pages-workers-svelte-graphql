@@ -1,3 +1,6 @@
+import { GraphQLOptions } from "apollo-server-core"
+import { CloudflareGraphQLOptions } from "../types"
+
 const html = (baseEndpoint: string) => `
 <!DOCTYPE html>
 <html>
@@ -492,5 +495,7 @@ const html = (baseEndpoint: string) => `
 `
 
 const headers = { 'Content-Type': 'text/html' }
-const handler = (request: Request, { baseEndpoint }: any): Response => new Response(html(baseEndpoint), { headers })
+const handler = (request: Request, { baseEndpoint }: CloudflareGraphQLOptions): Response => new Response(html(baseEndpoint), { headers })
+
 export default handler
+

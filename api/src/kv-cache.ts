@@ -1,18 +1,14 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-const cache: any = WORKERS_GRAPHQL_CACHE
-
 export default class KVCache {
-  get(key: string): unknown {
-    return cache.get(key)
+  get(key: string): any {
+    return WORKERS_GRAPHQL_CACHE.get(key)
   }
 
-  set(key: string, value: any, options: any): unknown {
-    const opts = {} as any
+  set(key: string, value: string, options: any): any {
+    const opts = {}
     const ttl = options && options.ttl
     if (ttl) {
-      opts.expirationTtl = ttl
+      (opts as any).expirationTtl = ttl
     }
-    return cache.put(key, value, opts)
+    return WORKERS_GRAPHQL_CACHE.put(key, value, opts)
   }
 }

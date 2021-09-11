@@ -1,11 +1,12 @@
-import { HTTPDataSource } from 'apollo-datasource-http'
+import { RESTDataSource } from 'apollo-datasource-rest'
 
-export default class PokemonAPI extends HTTPDataSource {
+export default class PokemonAPI extends RESTDataSource {
   constructor() {
-    super('https://pokeapi.co/api/v2/')
+    super()
+    this.baseURL = 'https://pokeapi.co/api/v2/'
   }
 
-  async getPokemon(id: string): Promise<unknown> {
+  async getPokemon(id: number): Promise<any> {
     return this.get(`pokemon/${id}`)
   }
 }

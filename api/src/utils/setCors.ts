@@ -1,4 +1,4 @@
-export default function setCorsHeaders(response: Response, config: any): void {
+const setCorsHeaders = (response: Response, config: any) => {
   const corsConfig = config instanceof Object ? config : false
 
   response.headers.set(
@@ -16,3 +16,4 @@ export default function setCorsHeaders(response: Response, config: any): void {
   response.headers.set('Access-Control-Allow-Origin', corsConfig ? corsConfig.allowOrigin : '*')
   response.headers.set('X-Content-Type-Options', 'nosniff')
 }
+export default setCorsHeaders

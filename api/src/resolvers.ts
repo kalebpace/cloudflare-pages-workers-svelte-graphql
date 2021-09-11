@@ -1,6 +1,6 @@
 export default {
   Query: {
-    pokemon: async (_source: unknown, { id }: any, { dataSources }: any): Promise<unknown> => {
+    pokemon: async (_source: any, { id }: any, { dataSources }: any): Promise<any> => {
       return dataSources.pokemonAPI.getPokemon(id)
     },
   },

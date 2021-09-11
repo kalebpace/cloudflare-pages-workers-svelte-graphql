@@ -1,7 +1,7 @@
-import { handleRequest } from '../src/handlers/handler'
+import { handleRequest } from '../src/handler'
 import makeServiceWorkerEnv from 'service-worker-mock'
 
-declare const global: any
+declare var global: any
 
 describe('handle', () => {
   beforeEach(() => {
@@ -12,8 +12,7 @@ describe('handle', () => {
   test('handle GET', async () => {
     const result = await handleRequest(new Request('/', { method: 'GET' }))
     expect(result.status).toEqual(200)
-
-    const actual = await result.json()
-    expect(actual.msg).toContain('Hello from Workers')
+    const text = await result.text()
+    expect(text).toEqual('request method: GET')
   })
 })
