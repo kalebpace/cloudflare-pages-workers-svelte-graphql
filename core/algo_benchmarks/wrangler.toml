@@ -20,12 +20,15 @@ globs = ["**/*.wasm"]
 type  = "CompiledWasm"
 
 [env.staging]
-[env.stagin.build]
+[env.staging.build]
 command = ""
-[env.stagin.build.upload]
+[env.staging.build.upload]
 dir    = "build/worker"
 format = "modules"
 main   = "./shim.mjs"
+[[env.staging.build.upload.rules]]
+globs = ["**/*.wasm"]
+type  = "CompiledWasm"
 
 [env.production]
 [env.production.build]
@@ -34,3 +37,6 @@ command = ""
 dir    = "build/worker"
 format = "modules"
 main   = "./shim.mjs"
+[[env.production.build.upload.rules]]
+globs = ["**/*.wasm"]
+type  = "CompiledWasm"
