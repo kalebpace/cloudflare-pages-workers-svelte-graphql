@@ -8,7 +8,7 @@ compatibility_flags = [ "formdata_parser_supports_files" ] # required
 WORKERS_RS_VERSION = "0.0.4"
 
 [build]
-command = "$HOME/.cargo/bin/cargo install -q worker-build && worker-build --release" # required
+command = "/usr/share/rust/.cargo/bin/cargo install -q worker-build && worker-build --release" # required
 
 [build.upload]
 dir    = "build/worker"
