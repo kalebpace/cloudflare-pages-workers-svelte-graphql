@@ -25,6 +25,8 @@ jobs:
           toolchain: stable
           profile: minimal
           components: cargo
+      - run: cargo install -q worker-build && worker-build --release"
+
       - uses: cloudflare/wrangler-action@1.3.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
