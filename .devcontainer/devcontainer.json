@@ -7,7 +7,8 @@
 	"extensions": [
 		"dbaeumer.vscode-eslint",
 		"johnsoncodehk.volar",
-		"eamodio.gitlens"
+		"eamodio.gitlens",
+		"rust-lang.rust"
 	],
 	"remoteUser": "node"
 }
