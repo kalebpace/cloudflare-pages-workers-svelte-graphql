@@ -26,7 +26,7 @@ jobs:
       - uses: cloudflare/wrangler-action@1.3.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          environment: $ENVIRONMENT
+          environment: ${{ env.ENVIRONMENT }}
           workingDirectory: 'core/algo_benchmarks'
         env:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
@@ -42,7 +42,7 @@ jobs:
         uses: cloudflare/wrangler-action@1.3.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          environment: $ENVIRONMENT
+          environment: ${{ env.ENVIRONMENT }}
           workingDirectory: 'api'
         env:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
