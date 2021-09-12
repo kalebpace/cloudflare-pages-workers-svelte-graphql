@@ -29,6 +29,9 @@ jobs:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
 
       - name: Publish Rust WASM Workers 
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
         uses: cloudflare/wrangler-action@1.3.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
