@@ -7,8 +7,8 @@ compatibility_flags = [ "formdata_parser_supports_files" ] # required
 [vars]
 WORKERS_RS_VERSION = "0.0.4"
 
-# [build]
-# command = "cargo install -q worker-build && worker-build --release"
+[build]
+command = "cargo install -q worker-build && worker-build --release"
 
 [build.upload]
 dir    = "build/worker"
@@ -20,5 +20,17 @@ globs = ["**/*.wasm"]
 type  = "CompiledWasm"
 
 [env.staging]
+[env.production.build]
+command = ""
+[env.production.build.upload]
+dir    = "build/worker"
+format = "modules"
+main   = "./shim.mjs"
 
 [env.production]
+[env.production.build]
+command = ""
+[env.production.build.upload]
+dir    = "build/worker"
+format = "modules"
+main   = "./shim.mjs"
