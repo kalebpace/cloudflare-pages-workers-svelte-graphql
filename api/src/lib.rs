@@ -1,4 +1,4 @@
-use juniper::{http as juniper_http, Variables};
+use juniper::{http as juniper_http, http::GraphQLRequest};
 use serde_json::json;
 use worker::*;
 
@@ -26,18 +26,9 @@ pub async fn main(req: Request, env: Env) -> Result<Response> {
         })
         .post_async("/graphql", |mut req, _ctx| async move {
             let schema_doc = schema::create_schema();
-
-            // let res = juniper::execute_sync(
-            //     "query { human(id: \"1234\") { name } }",
-            //     None,
-            //     &schema_doc,
-            //     &Variables::new(),
-            //     &(),
-            // );
-            let res =
-                juniper::introspect(&schema_doc, &(), juniper::IntrospectionFormat::default());
-
-            Response::from_json(&json!(&res))
+            let graphql_request = req.json::<GraphQLRequest>().await.unwrap();
+            let result = graphql_request.execute_sync(&schema_doc, &());
+            Response::from_json(&json!(&result))
         })
         .run(req, env)
         .await

@@ -1,5 +1,5 @@
 use juniper::FieldResult;
-use juniper::{EmptySubscription, RootNode, Variables};
+use juniper::{EmptySubscription, RootNode};
 
 #[derive(GraphQLEnum)]
 enum Episode {
