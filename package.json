@@ -1,0 +1,19 @@
+{
+  "name": "cloudflare-pages-workers-vue3-graphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kalebpace/cloudflare-pages-workers-vue3-graphql.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kalebpace/cloudflare-pages-workers-vue3-graphql/issues"
+  },
+  "homepage": "https://github.com/kalebpace/cloudflare-pages-workers-vue3-graphql#readme"
+}

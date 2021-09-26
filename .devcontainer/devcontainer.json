@@ -2,7 +2,6 @@
 	"name": "cloudflare-pages-workers-vue3-graphql",
 	"build": {
 		"dockerfile": "Dockerfile",
-		"target": "development"
 	},
 	"extensions": [
 		"dbaeumer.vscode-eslint",
@@ -10,5 +9,5 @@
 		"eamodio.gitlens",
 		"rust-lang.rust"
 	],
-	"remoteUser": "node"
+	"remoteUser": "arch"
 }

@@ -20,7 +20,23 @@ globs = ["**/*.wasm"]
 type  = "CompiledWasm"
 
 [env.staging]
-name = "api-staging"
+[env.staging.build]
+command = ""
+[env.staging.build.upload]
+dir    = "build/worker"
+format = "modules"
+main   = "./shim.mjs"
+[[env.staging.build.upload.rules]]
+globs = ["**/*.wasm"]
+type  = "CompiledWasm"
 
 [env.production]
-name = "api-production"
+[env.production.build]
+command = ""
+[env.production.build.upload]
+dir    = "build/worker"
+format = "modules"
+main   = "./shim.mjs"
+[[env.production.build.upload.rules]]
+globs = ["**/*.wasm"]
+type  = "CompiledWasm"
