@@ -4,10 +4,12 @@
 		"dockerfile": "Dockerfile",
 	},
 	"extensions": [
-		"dbaeumer.vscode-eslint",
-		"johnsoncodehk.volar",
 		"eamodio.gitlens",
-		"rust-lang.rust"
+		"rust-lang.rust",
+		"dbaeumer.vscode-eslint",
+		"svelte.svelte-vscode",
+		"graphql.vscode-graphql",
+		"bungcip.better-toml"
 	],
-	"remoteUser": "arch"
+	"remoteUser": "vscode"
 }

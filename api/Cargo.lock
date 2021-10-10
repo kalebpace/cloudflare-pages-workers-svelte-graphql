@@ -18,6 +18,7 @@ dependencies = [
  "cfg-if 0.1.10",
  "console_error_panic_hook",
  "juniper",
+ "juniper_cf_workers",
  "serde_json",
  "wee_alloc",
  "worker",
@@ -384,6 +385,18 @@ dependencies = [
  "static_assertions",
  "url",
  "uuid",
+]
+
+[[package]]
+name = "juniper_cf_workers"
+version = "0.0.1"
+dependencies = [
+ "cfg-if 0.1.10",
+ "console_error_panic_hook",
+ "juniper",
+ "serde",
+ "serde_json",
+ "worker",
 ]
 
 [[package]]

@@ -1,0 +1,11 @@
+/workspaces/cloudflare-pages-workers-vue3-graphql/lib/juniper_cf_workers/target/rls/debug/deps/getrandom-76256e64fc903bb4.rmeta: /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/lib.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/error.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/util.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/error_impls.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/util_libc.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/use_file.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/linux_android.rs
+
+/workspaces/cloudflare-pages-workers-vue3-graphql/lib/juniper_cf_workers/target/rls/debug/deps/getrandom-76256e64fc903bb4.d: /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/lib.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/error.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/util.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/error_impls.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/util_libc.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/use_file.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/linux_android.rs
+
+/home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/lib.rs:
+/home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/error.rs:
+/home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/util.rs:
+/home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/error_impls.rs:
+/home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/util_libc.rs:
+/home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/use_file.rs:
+/home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/getrandom-0.1.16/src/linux_android.rs:

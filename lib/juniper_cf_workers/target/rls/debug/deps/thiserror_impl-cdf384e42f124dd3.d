@@ -1,0 +1,12 @@
+/workspaces/cloudflare-pages-workers-vue3-graphql/lib/juniper_cf_workers/target/rls/debug/deps/libthiserror_impl-cdf384e42f124dd3.so: /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/lib.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/ast.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/attr.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/expand.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/fmt.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/generics.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/prop.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/valid.rs
+
+/workspaces/cloudflare-pages-workers-vue3-graphql/lib/juniper_cf_workers/target/rls/debug/deps/thiserror_impl-cdf384e42f124dd3.d: /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/lib.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/ast.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/attr.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/expand.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/fmt.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/generics.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/prop.rs /home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/valid.rs
+
+/home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/lib.rs:
+/home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/ast.rs:
+/home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/attr.rs:
+/home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/expand.rs:
+/home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/fmt.rs:
+/home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/generics.rs:
+/home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/prop.rs:
+/home/vscode/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.29/src/valid.rs:

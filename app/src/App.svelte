@@ -1,6 +1,38 @@
 <script lang="ts">
   import logo from './assets/svelte.png'
   import Counter from './lib/Counter.svelte'
+
+  import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client/core';
+  import {setClient, query} from 'svelte-apollo'
+  import { gql } from '@apollo/client/core'
+
+  function createApolloClient() {
+    const httpLink = new HttpLink({
+      uri: "http://localhost:8787/graphql",
+    });
+
+    const cache = new InMemoryCache();
+    const client = new ApolloClient({
+      link: httpLink,
+      cache,
+    });
+
+    return client;
+  }
+
+  setClient(createApolloClient())
+
+  const TEST_QUERY = gql`
+    query {
+      human(id: "1234") {
+        name
+      }
+    }
+  `
+
+  console.log(query(TEST_QUERY))
+
+
 </script>
 
 <main>

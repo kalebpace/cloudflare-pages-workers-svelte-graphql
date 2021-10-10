@@ -1,5 +1,6 @@
 use juniper::FieldResult;
 use juniper::{EmptySubscription, RootNode};
+use juniper::{GraphQLEnum, GraphQLInputObject, GraphQLObject};
 
 #[derive(GraphQLEnum)]
 enum Episode {
@@ -7,8 +8,6 @@ enum Episode {
     Empire,
     Jedi,
 }
-
-use juniper::{GraphQLEnum, GraphQLInputObject, GraphQLObject};
 
 #[derive(GraphQLObject)]
 #[graphql(description = "A humanoid creature in the Star Wars universe")]

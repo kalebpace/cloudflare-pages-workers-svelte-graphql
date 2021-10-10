@@ -17,5 +17,10 @@
     "tslib": "^2.2.0",
     "typescript": "^4.3.2",
     "vite": "^2.5.4"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.4.13",
+    "graphql": "^15.6.0",
+    "svelte-apollo": "^0.4.0"
   }
 }
