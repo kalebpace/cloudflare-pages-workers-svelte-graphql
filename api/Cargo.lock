@@ -19,6 +19,7 @@ dependencies = [
  "console_error_panic_hook",
  "juniper",
  "juniper_cf_workers",
+ "serde",
  "serde_json",
  "wee_alloc",
  "worker",

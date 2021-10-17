@@ -2,7 +2,7 @@ use juniper::http::GraphQLBatchRequest;
 use juniper::http::GraphQLRequest;
 use serde::Deserialize;
 use serde_json::json;
-use worker::{console_log, Method, Request, Response, Result};
+use worker::{Method, Request, Response, Result};
 
 #[derive(Deserialize, Clone, PartialEq, Debug)]
 #[serde(deny_unknown_fields)]
