@@ -1,55 +1,9 @@
 <script lang="ts">
-  import logo from './assets/svelte.png'
-  import Counter from './lib/Counter.svelte'
-
-  import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client/core';
-  import {setClient, query} from 'svelte-apollo'
-  import { gql } from '@apollo/client/core'
-
-  function createApolloClient() {
-    const httpLink = new HttpLink({
-      uri: "http://localhost:8787/graphql",
-    });
-
-    const cache = new InMemoryCache();
-    const client = new ApolloClient({
-      link: httpLink,
-      cache,
-    });
-
-    return client;
-  }
-
-  setClient(createApolloClient())
-
-  const TEST_QUERY = gql`
-    query {
-      human(id: "1234") {
-        name
-      }
-    }
-  `
-
-  console.log(query(TEST_QUERY))
-
-
+  import YouTubePlayer from './lib/YouTubePlayer.svelte';
 </script>
 
 <main>
-  <img src={logo} alt="Svelte Logo" />
-  <h1>Hello Typescript!</h1>
-
-  <Counter />
-
-  <p>
-    Visit <a href="https://svelte.dev">svelte.dev</a> to learn how to build Svelte
-    apps.
-  </p>
-
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme">SvelteKit</a> for
-    the officially supported framework, also powered by Vite!
-  </p>
+  <YouTubePlayer videoId="trinU3VD1Zo"/>
 </main>
 
 <style>
@@ -62,36 +16,5 @@
     text-align: center;
     padding: 1em;
     margin: 0 auto;
-  }
-
-  img {
-    height: 16rem;
-    width: 16rem;
-  }
-
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4rem;
-    font-weight: 100;
-    line-height: 1.1;
-    margin: 2rem auto;
-    max-width: 14rem;
-  }
-
-  p {
-    max-width: 14rem;
-    margin: 1rem auto;
-    line-height: 1.35;
-  }
-
-  @media (min-width: 480px) {
-    h1 {
-      max-width: none;
-    }
-
-    p {
-      max-width: none;
-    }
   }
 </style>
