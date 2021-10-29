@@ -20,7 +20,7 @@ pub async fn main(req: Request, env: Env) -> Result<Response> {
             let stub = namespace.id_from_name(session_name.unwrap())?.get_stub()?;
             let response = stub.fetch_with_str("/get-session").await;
             if response.is_ok() {
-                let session = response?.json::<session::Session>().await?;
+                let session = response?.json::<session::Internal>().await?;
                 match session.name().chars().count() {
                     0 => Response::error("Session does not exist!", 404),
                     _ => Response::from_json(&json!(session)),

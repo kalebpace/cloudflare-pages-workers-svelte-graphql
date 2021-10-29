@@ -14,7 +14,15 @@ bindings = [
 
 [[migrations]]
 tag = "v1" # Should be unique for each entry
-new_classes = ["Session"] # Array of new classes
+new_classes = ["Session"]
+
+[[migrations]]
+tag = "v1.1"
+renamed_classes = [{ from = "Session", to = "Store" }]
+
+[[migrations]]
+tag = "v1.2"
+renamed_classes = [{ from = "Store", to = "Session" }]
 
 [build]
 command = "cargo install -q worker-build && worker-build --release" # required
@@ -28,24 +36,24 @@ main   = "./shim.mjs"
 globs = ["**/*.wasm"]
 type  = "CompiledWasm"
 
-[env.staging]
-[env.staging.build]
-command = ""
-[env.staging.build.upload]
-dir    = "build/worker"
-format = "modules"
-main   = "./shim.mjs"
-[[env.staging.build.upload.rules]]
-globs = ["**/*.wasm"]
-type  = "CompiledWasm"
+# [env.staging]
+# [env.staging.build]
+# command = ""
+# [env.staging.build.upload]
+# dir    = "build/worker"
+# format = "modules"
+# main   = "./shim.mjs"
+# [[env.staging.build.upload.rules]]
+# globs = ["**/*.wasm"]
+# type  = "CompiledWasm"
 
-[env.production]
-[env.production.build]
-command = ""
-[env.production.build.upload]
-dir    = "build/worker"
-format = "modules"
-main   = "./shim.mjs"
-[[env.production.build.upload.rules]]
-globs = ["**/*.wasm"]
-type  = "CompiledWasm"
+# [env.production]
+# [env.production.build]
+# command = ""
+# [env.production.build.upload]
+# dir    = "build/worker"
+# format = "modules"
+# main   = "./shim.mjs"
+# [[env.production.build.upload.rules]]
+# globs = ["**/*.wasm"]
+# type  = "CompiledWasm"
