@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kalebpace/cloudflare-pages-workers-vue3-graphql/issues"
   },
-  "homepage": "https://github.com/kalebpace/cloudflare-pages-workers-vue3-graphql#readme"
+  "homepage": "https://github.com/kalebpace/cloudflare-pages-workers-vue3-graphql#readme",
+  "dependencies": {
+    "svelte-youtube": "^0.0.2"
+  }
 }
