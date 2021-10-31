@@ -3,22 +3,22 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Internal {
-    name: String,
+    id: String,
     queue: Vec<Song>,
     current_play_time: u32,
 }
 
 impl Internal {
-    pub fn new(name: &str) -> Self {
+    pub fn new(id: &str) -> Self {
         Self {
-            name: String::from(name),
+            id: id.to_string(),
             queue: vec![],
             current_play_time: 0,
         }
     }
 
-    pub fn name(&self) -> &str {
-        &self.name
+    pub fn id(&self) -> &str {
+        &self.id
     }
 
     pub fn get_item(&self, index: usize) -> &Song {
@@ -50,7 +50,6 @@ impl Internal {
 mod test {
 
     use super::*;
-    use song::Song;
 
     #[test]
     fn test_add_song_to_queue() {

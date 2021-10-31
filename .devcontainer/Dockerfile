@@ -1,9 +1,11 @@
 FROM debian
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
     build-essential \
+    pkg-config \
+    libssl-dev \
     sudo \
     curl \
-    git
+    git 
 
 ARG USERNAME=vscode
 ARG USER_UID=1000
@@ -28,7 +30,10 @@ RUN pnpm env use --global lts
 # install wrangler
 RUN pnpm add --global @cloudflare/wrangler
 
-# install cargo
+# install rustup
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-ENV PATH="$PATH:/${USERNAME}/.cargo/bin"
+ENV PATH="$PATH:/home/$USERNAME/.cargo/bin"
+
+# install wasm-pack directly to fix broken github release url
+RUN echo $PATH && curl --proto '=https' --tlsv1.2 -sSf https://rustwasm.github.io/wasm-pack/installer/init.sh | sh
 

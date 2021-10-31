@@ -26,7 +26,6 @@ impl DurableObject for Session {
         let url = _req.url()?;
         let path_segments = url.path_segments().map(|c| c.collect::<Vec<_>>()).unwrap();
         match path_segments[0] {
-            "/" => Response::ok(&format!("Your session name is: {}", self.internal.name())),
             "get-session" => Response::from_json(&json!(self.internal)),
             _ => Response::error("Resource not found", 404),
         }
