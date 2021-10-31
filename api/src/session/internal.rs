@@ -1,11 +1,13 @@
 use super::song::Song;
+use juniper::GraphQLObject;
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize, GraphQLObject)]
+#[graphql(description = "The internal state wrapped by the Session Durable Object")]
 pub struct Internal {
     id: String,
     queue: Vec<Song>,
-    current_play_time: u32,
+    current_play_time: i32,
 }
 
 impl Internal {

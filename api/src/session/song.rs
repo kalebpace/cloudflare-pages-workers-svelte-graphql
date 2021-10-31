@@ -1,10 +1,12 @@
+use juniper::GraphQLObject;
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize, GraphQLObject)]
+#[graphql(description = "A song which maps to a given youtube video id")]
 pub struct Song {
     video_id: String,
-    votes: u32,
-    length: u32,
+    votes: i32,
+    length: i32,
 }
 
 impl Song {
@@ -20,7 +22,7 @@ impl Song {
         &self.video_id
     }
 
-    pub fn votes(&self) -> u32 {
+    pub fn votes(&self) -> i32 {
         self.votes
     }
 

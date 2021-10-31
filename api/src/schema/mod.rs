@@ -1,6 +1,14 @@
 use juniper::FieldResult;
 use juniper::{EmptySubscription, RootNode};
 use juniper::{GraphQLEnum, GraphQLInputObject, GraphQLObject};
+use worker::RouteContext;
+
+use super::session::{internal::Internal, song::Song};
+
+struct Context {
+    route_ctx: RouteContext<()>,
+}
+impl juniper::Context for Context {}
 
 #[derive(GraphQLEnum)]
 enum Episode {
@@ -42,6 +50,7 @@ impl QueryRoot {
 
 pub struct MutationRoot;
 
+// #[juniper::graphql_object(context = Context)]
 #[juniper::graphql_object]
 impl MutationRoot {
     fn create_human(new_human: NewHuman) -> FieldResult<Human> {
@@ -52,6 +61,14 @@ impl MutationRoot {
             home_planet: new_human.home_planet,
         })
     }
+
+    // async fn create_session(ctx: &Context) -> FieldResult<Internal> {
+    //     let namespace = ctx.route_ctx.durable_object("SESSION")?;
+    //     let stub = namespace.unique_id()?.get_stub()?;
+    //     let response = stub.fetch_with_str("/get-session").await?;
+    //     let result = response.json::<Internal>().await?;
+    //     Ok(result)
+    // }
 }
 
 pub type Schema = RootNode<'static, QueryRoot, MutationRoot, EmptySubscription>;

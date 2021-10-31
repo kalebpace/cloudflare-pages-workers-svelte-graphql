@@ -1,7 +1,7 @@
-mod internal;
-mod song;
+pub mod internal;
+pub mod song;
 
-pub use internal::Internal;
+use internal::Internal;
 use serde_json::json;
 use worker::*;
 
