@@ -1,15 +1,59 @@
 name = "api"
 type = "javascript"
-workers_dev = false
+workers_dev = true
+compatibility_date = "2021-09-25"
+compatibility_flags = [ "formdata_parser_supports_files" ] # required
+
+[vars]
+WORKERS_RS_VERSION = "0.0.6"
+
+[durable_objects]
+bindings = [
+  { name = "SESSION", class_name = "Session" } # the `class_name` uses the Rust struct identifier name
+]
+
+[[migrations]]
+tag = "v1" # Should be unique for each entry
+new_classes = ["Session"]
+
+[[migrations]]
+tag = "v1.1"
+renamed_classes = [{ from = "Session", to = "Store" }]
+
+[[migrations]]
+tag = "v1.2"
+renamed_classes = [{ from = "Store", to = "Session" }]
 
 [build]
-command = "npm install && npm run build"
+command = "cargo install -q worker-build && worker-build --release" # required
 
 [build.upload]
-format = "service-worker"
+dir    = "build/worker"
+format = "modules"
+main   = "./shim.mjs"
 
-[env.staging]
-workers_dev = true
+[[build.upload.rules]]
+globs = ["**/*.wasm"]
+type  = "CompiledWasm"
 
-[env.production]
-workers_dev = false
+# [env.staging]
+# [env.staging.build]
+# command = ""
+# [env.staging.build.upload]
+# dir    = "build/worker"
+# format = "modules"
+# main   = "./shim.mjs"
+# [[env.staging.build.upload.rules]]
+# globs = ["**/*.wasm"]
+# type  = "CompiledWasm"
+
+# [env.production]
+# [env.production.build]
+# command = ""
+# [env.production.build.upload]
+# dir    = "build/worker"
+# format = "modules"
+# main   = "./shim.mjs"
+# [[env.production.build.upload.rules]]
+# globs = ["**/*.wasm"]
+# type  = "CompiledWasm"

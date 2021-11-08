@@ -1,37 +1,39 @@
-FROM node:15-buster-slim as base
-
-
-FROM base as development
-RUN apt-get update && apt-get install -y \
-    sudo \
+FROM debian
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
     build-essential \
-    nodejs \
-    npm \
+    pkg-config \
+    libssl-dev \
+    sudo \
     curl \
-    git \
-    python3 \
-    make \
-    g++ \
-    && apt-get clean
+    git 
 
-ARG USERNAME=node
+ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
-# RUN groupadd --gid $USER_GID $USERNAME \
-#     && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
-#     && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
-#     && chmod 0440 /etc/sudoers.d/$USERNAME
-run groupmod --gid $USER_GID $USERNAME \
-    && usermod --uid $USER_UID --gid $USER_GID $USERNAME \
-    && chown -R $USER_UID:$USER_GID /home/$USERNAME
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
+    && chmod 0440 /etc/sudoers.d/$USERNAME
+
 USER $USERNAME
+WORKDIR /home/$USERNAME
 
 # install devtools
-ENV NPM_CONFIG_PREFIX=~/.npm-global
-RUN echo "export PATH=~/.npm-global/bin:$PATH" >> ~/.profile
-RUN npm i -g @vue/cli @cloudflare/wrangler
+# install pnpm
+RUN curl -fsSL https://get.pnpm.io/install.sh | sh -
+ENV PNPM_HOME="/home/$USERNAME/.local/share/pnpm"
+ENV PATH="$PATH:$PNPM_HOME"
 
-# install cargo
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
-ENV PATH="/root/.cargo/bin:${PATH}"
+# install node
+RUN pnpm env use --global lts
+
+# install wrangler
+RUN pnpm add --global @cloudflare/wrangler
+
+# install rustup
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+ENV PATH="$PATH:/home/$USERNAME/.cargo/bin"
+
+# install wasm-pack directly to fix broken github release url
+RUN echo $PATH && curl --proto '=https' --tlsv1.2 -sSf https://rustwasm.github.io/wasm-pack/installer/init.sh | sh
 
