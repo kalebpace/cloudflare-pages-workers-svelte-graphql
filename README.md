@@ -6,7 +6,7 @@ The main functionality of jukejitsu is to implement real-time sync'ing of a musi
 The top of the queue is then played by a video/audio player which syncs current playback state between all clients.
 
 ### Project specifics
-In my effort to experiement with the Cloudflare Workers platform, I aimed to acheive a few items below:
+In my effort to experiement with the Cloudflare Workers platform, I had a few objectives:
 - experiment with the Cloudflare Pages platform
 - create a juniper wrapper, named `juniper_cf_workers`, around the `workers-rs` crate to support running GraphQL servers and merge it upstream with the juniper project
 - implement a Durable Object which manages sessions via websockets (sadly `workers-rs` does not have an interface for this yet)
